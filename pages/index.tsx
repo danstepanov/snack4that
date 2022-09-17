@@ -52,7 +52,7 @@ const Home: NextPage = () => {
   ])
 
   return (
-    <div className="bg-white dark:bg-slate-800 flex flex-col border h-screen justify-between">
+    <div className="bg-white dark:bg-slate-800 flex flex-col h-screen justify-between">
       <Head>
         <title>Snack for That</title>
         <meta name="description" content="Helpful Expo Snacks" />
