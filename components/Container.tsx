@@ -28,7 +28,7 @@ export default function Container({ children } : {children: ReactElement }) {
             </main>
 
             <footer className="flex justify-center mb-2">
-                <Hyperlink baseText="Maintained by" urlText="Dan Stepanov" url="https://twitter.com/danstepanov" />
+                <Hyperlink baseText="Maintained by" urlText="Dan Stepanov" url="https://danstepanov.com" />
             </footer>
         </div>
     </div>
