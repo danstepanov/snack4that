@@ -1,9 +1,9 @@
 import React, { Key, useState } from "react"
 import type { NextPage } from "next"
-import Head from "next/head"
 
 import Hyperlink from '../components/Hyperlink'
 import SnackCard from '../components/SnackCard'
+import Container from "../components/Container"
 
 declare global {
   interface SnackCard {
@@ -52,28 +52,21 @@ const Home: NextPage = () => {
   ])
 
   return (
-    <div className="bg-white dark:bg-slate-800 flex flex-col h-screen justify-between">
-      <Head>
-        <title>Snack for That</title>
-        <meta name="description" content="Helpful Expo Snacks" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className="flex flex-col mx-2">
-        <p className="text-3xl font-bold text-slate-900 dark:text-white mt-2">{`There's a Snack for That`}</p>
-        <Hyperlink baseText="Have a Snack to contribute?" urlText="Hit me up" url="https://twitter.com/danstepanov" />
-        <div className="grid grid-cols-1 gap-4 mt-4 md:grid-cols-2 lg:grid-cols-4">
+    <Container>
+      <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
+        <h1 className="animate-move-bg bg-gradient-to-r from-indigo-500 via-pink-500 to-indigo-500 bg-400% bg-clip-text md:text-5xl text-4xl font-bold text-transparent">{`There's a Snack for That`}</h1>
+        <div className="flex flex-col flex-wrap mt-4">
+          <p className="text-xl text-black dark:text-white">Have a Snack to contribute?&nbsp;</p>
+          <Hyperlink xl baseText="" urlText="Hit me up" url="https://twitter.com/danstepanov" />
+        </div>
+        <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 text-black pt-8 dark:text-white">Snacks</h3>
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           {snacks.map((snack: SnackCard) => (
             <SnackCard key={snack.id} snack={snack} />
-          ))
-          }
+          ))}
         </div>
-      </main>
-
-      <footer className="flex justify-center items-center mb-2">
-        <Hyperlink baseText="Maintained by" urlText="Dan Stepanov" url="https://twitter.com/danstepanov" />
-      </footer>
-    </div>
+      </div>
+    </Container>
   )
 }
 

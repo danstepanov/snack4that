@@ -1,5 +1,5 @@
-const Hyperlink = ({ baseText, urlText, url }: { baseText: string, urlText: string, url: string }) => (
-    <p className="text-slate-900 dark:text-white">
+const Hyperlink = ({ baseText, urlText, url, xl = false }: { baseText: string, urlText: string, url: string, xl?: boolean }) => (
+  <p className={`${xl && 'text-xl'} text-black dark:text-white`}>
       {baseText} {" "} 
       <a
         href={url}

@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import type { AppProps } from 'next/app'
 import { useEffect } from 'react'
 import * as Fathom from 'fathom-client'
+import { ThemeProvider } from 'next-themes'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
@@ -25,7 +26,11 @@ function MyApp({ Component, pageProps }: AppProps) {
     }
   }, [router.events])
 
-  return <Component {...pageProps} />
+  return (
+    <ThemeProvider attribute="class">
+      <Component {...pageProps} />
+    </ThemeProvider>
+  )
 }
 
 export default MyApp

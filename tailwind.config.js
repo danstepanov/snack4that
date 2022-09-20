@@ -4,9 +4,26 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
-    fontFamily: {
-      sans: ['Graphik', 'sans-serif'],
-    }
-  }
+    backgroundSize: {
+      '400%': '400%'
+    },
+    extend: {
+      keyframes: {
+        'move-bg': {
+          to: {
+            backgroundPosition: '400% 0'
+          }
+        }
+      },
+      animation: {
+        'move-bg': 'move-bg 16s infinite linear'
+      }
+    },
+  },
+  variants: {
+    extend: {},
+  },
+  plugins: [require('@tailwindcss/typography')],
 }
