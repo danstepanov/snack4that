@@ -4,6 +4,8 @@ import type { NextPage } from "next"
 import Hyperlink from '../components/Hyperlink'
 import SnackCard from '../components/SnackCard'
 import Container from "../components/Container"
+import SectionTitle from "../components/SectionTitle"
+import Title from "../components/Title"
 
 declare global {
   interface SnackCard {
@@ -54,12 +56,17 @@ const Home: NextPage = () => {
   return (
     <Container>
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
-        <h1 className="animate-move-bg bg-gradient-to-r from-indigo-500 via-pink-500 to-indigo-500 bg-400% bg-clip-text md:text-5xl text-4xl font-bold text-transparent">{`There's a Snack for That`}</h1>
+        <Title>{`There's a Snack for That`}</Title>
         <div className="flex flex-col flex-wrap mt-4">
-          <p className="text-xl text-black dark:text-white">Have a Snack to contribute?&nbsp;</p>
+          <Hyperlink xl baseText="Create your own" urlText="Snack" url="https://snack.expo.dev" />
+          <p className="text-xl text-black dark:text-white mt-4">Have a Snack to contribute?&nbsp;</p>
           <Hyperlink xl baseText="" urlText="Hit me up" url="https://twitter.com/danstepanov" />
         </div>
-        <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 text-black pt-8 dark:text-white">Snacks</h3>
+        <div className="flex flex-col w-full">
+          <SectionTitle>Snack of the Day</SectionTitle>
+          <SnackCard key={snacks[0].id} snack={snacks[0]} />
+        </div>
+        <SectionTitle>All Snacks</SectionTitle>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           {snacks.map((snack: SnackCard) => (
             <SnackCard key={snack.id} snack={snack} />
