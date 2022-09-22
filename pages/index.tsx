@@ -9,7 +9,7 @@ import Title from "../components/Title"
 
 declare global {
   interface SnackCard {
-    id: Key;
+    id: number;
     title: string;
     description: string;
     twitterUrl: string;
@@ -51,8 +51,16 @@ const Home: NextPage = () => {
       author: "Dan Stepanov",
       snackUrl: "https://snack.expo.dev/@danstepanov/dynamic-button-and-text"
     },
+    {
+      id: 4,
+      title: "Tailwind Playground via NativeWind",
+      description: "Play with Tailwind styles in Expo Snack using NativeWind. Do not install the peer dependency when prompted at the bottom of the screen.",
+      twitterUrl: "https://twitter.com/mark__lawlor",
+      author: "Mark Lawlor",
+      snackUrl: "https://snack.expo.dev/@mwlawlor/nativewind"
+    }
   ])
-
+  const sortedSnacks = snacks.sort((a, b) => b.id - a.id)
   return (
     <Container>
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
@@ -64,11 +72,11 @@ const Home: NextPage = () => {
         </div>
         <div className="flex flex-col w-full">
           <SectionTitle>Snack of the Day</SectionTitle>
-          <SnackCard key={snacks[0].id} snack={snacks[0]} />
+          <SnackCard key={sortedSnacks[0].id} snack={snacks[0]} />
         </div>
         <SectionTitle>All Snacks</SectionTitle>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-          {snacks.map((snack: SnackCard) => (
+          {sortedSnacks.map((snack: SnackCard) => (
             <SnackCard key={snack.id} snack={snack} />
           ))}
         </div>
