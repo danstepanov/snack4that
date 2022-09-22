@@ -1,4 +1,4 @@
-import React, { Key, useState } from "react"
+import React, { useState } from "react"
 import type { NextPage } from "next"
 
 import Hyperlink from '../components/Hyperlink'
@@ -74,7 +74,10 @@ const Home: NextPage = () => {
           <SectionTitle>Snack of the Day</SectionTitle>
           <SnackCard key={sortedSnacks[0].id} snack={snacks[0]} />
         </div>
-        <SectionTitle>All Snacks</SectionTitle>
+        <div className="flex justify-between">
+          <SectionTitle>All Snacks</SectionTitle>
+          <button>+</button>
+        </div>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           {sortedSnacks.map((snack: SnackCard) => (
             <SnackCard key={snack.id} snack={snack} />

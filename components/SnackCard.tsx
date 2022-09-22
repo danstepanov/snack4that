@@ -1,9 +1,8 @@
-import { Key } from "react";
 import Hyperlink from "./Hyperlink"
 
-const SnackCard = ({ key, snack }: { key: Key, snack: SnackCard }) => {
+const SnackCard = ({ snack }: { snack: SnackCard }) => {
     return (
-        <div key={key} className="group flex flex-col border border-gray-200 dark:border-gray-800 rounded p-4 justify-between md:hover:border-blue-500">
+        <div className="group flex flex-col border border-gray-200 dark:border-gray-800 rounded p-4 justify-between md:hover:border-blue-500">
             <a href={`${snack.snackUrl}?&platform=mydevice`} target="_blank" rel="noopener noreferrer">
                 <h2 className="font-bold text-gray-900 dark:text-gray-100 md:group-hover:text-blue-500">{`${snack.title} `}&rarr;</h2>
                 <p className="text-sm text-gray-700 dark:text-gray-300 md:group-hover:text-blue-500 w-4/5 mt-2 mb-4">{snack.description}</p>
