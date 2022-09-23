@@ -14,8 +14,8 @@ class MyDocument extends Document {
                     <link rel="icon" href="/favicon.ico" />
                     <meta property="og:title" content="Snack for That" key="ogtitle" />
                     <meta property="og:description" content="A collection of helpful Expo Snacks" key="ogdescription" />
-                    <meta property="og:image" content="/public/snacks.jpg" key="ogimageurl" />
-                    <meta property="og:image:secure_url" content="/public/snacks.jpg" key="ogimagesecureurl" />
+                    <meta property="og:image" content="/snacks.jpg" key="ogimageurl" />
+                    <meta property="og:image:secure_url" content="/snacks.jpg" key="ogimagesecureurl" />
                     <meta property="og:image:type" content="image/png" key="ogimagetype" />
                     <meta property="og:image:width" content="1200" key="ogiamgewidth" />
                     <meta property="og:image:height" content="627" key="ogimageheight" />
