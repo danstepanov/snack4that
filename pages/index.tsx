@@ -1,11 +1,15 @@
 import React, { useState } from "react"
 import type { NextPage } from "next"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faCirclePlus } from '@fortawesome/free-solid-svg-icons'
 
 import Hyperlink from '../components/Hyperlink'
 import SnackCard from '../components/SnackCard'
 import Container from "../components/Container"
 import SectionTitle from "../components/SectionTitle"
 import Title from "../components/Title"
+import Modal from "../components/Modal"
+import useModal from "../hooks/useModal"
 
 declare global {
   interface SnackCard {
@@ -61,28 +65,32 @@ const Home: NextPage = () => {
     }
   ])
   const sortedSnacks = snacks.sort((a, b) => b.id - a.id)
+  const [showModal, toggleModal] = useModal(false)
+
   return (
     <Container>
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
         <Title>{`There's a Snack for That`}</Title>
         <div className="flex flex-col flex-wrap mt-4">
           <Hyperlink xl baseText="Create your own" urlText="Snack" url="https://snack.expo.dev" />
-          <p className="text-xl text-black dark:text-white mt-4">Have a Snack to contribute?&nbsp;</p>
-          <Hyperlink xl baseText="" urlText="Hit me up" url="https://twitter.com/danstepanov" />
         </div>
         <div className="flex flex-col w-full">
           <SectionTitle>Snack of the Day</SectionTitle>
           <SnackCard key={sortedSnacks[0].id} snack={snacks[0]} />
         </div>
-        <div className="flex justify-between">
+        <div className="flex justify-between w-full">
           <SectionTitle>All Snacks</SectionTitle>
-          <button>+</button>
+          <button onClick={toggleModal}>
+            <FontAwesomeIcon icon={faCirclePlus} size="2x" className="flex self-center px-2 pt-2 text-black dark:text-white text-center font-bold" />
+          </button>
+          
         </div>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           {sortedSnacks.map((snack: SnackCard) => (
             <SnackCard key={snack.id} snack={snack} />
           ))}
         </div>
+        {showModal ? <Modal toggleModal={toggleModal} /> : null}
       </div>
     </Container>
   )

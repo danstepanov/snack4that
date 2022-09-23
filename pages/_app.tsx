@@ -4,6 +4,11 @@ import type { AppProps } from 'next/app'
 import { useEffect } from 'react'
 import * as Fathom from 'fathom-client'
 import { ThemeProvider } from 'next-themes'
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
+
+// Tell Font Awesome to skip adding the CSS automatically since it's being imported above
+config.autoAddCss = false; 
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
