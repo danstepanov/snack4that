@@ -14,6 +14,7 @@ import useModal from "../hooks/useModal"
 declare global {
   interface SnackCard {
     id: number;
+    eventId: string;
     title: string;
     description: string;
     twitterUrl: string;
@@ -25,6 +26,7 @@ const Home: NextPage = () => {
   const [snacks] = useState<SnackCard[]>([
     {
       id: 0,
+      eventId: "QYQWKZ5X",
       title: "App Update Available Banner",
       description: "Optionally present a banner over your app when there is a new over-the-air update available.",
       twitterUrl: "https://twitter.com/danstepanov",
@@ -33,6 +35,7 @@ const Home: NextPage = () => {
     },
     {
       id: 1,
+      eventId: "CQ0VVTQO",
       title: "User Auth with Expo",
       description: "As AuthSession uses the auth.expo.io proxy, you'll need to enable Tracking Services, this is not recommended for production.",
       twitterUrl: "https://twitter.com/danstepanov",
@@ -41,6 +44,7 @@ const Home: NextPage = () => {
     },
     {
       id: 2,
+      eventId: "4DAIRFIS",
       title: "Cupertino/iOS Nav List",
       description: "Visually native iOS list. Uses all the native platform colors so it can match styles across iOS versions.",
       twitterUrl: "https://twitter.com/baconbrix",
@@ -49,6 +53,7 @@ const Home: NextPage = () => {
     },
     {
       id: 3,
+      eventId: "EN8VLV0I",
       title: "Dynamic Button and Text",
       description: "Highly reusable Tailwind-style components that allow for theme-based styles.",
       twitterUrl: "https://twitter.com/danstepanov",
@@ -57,6 +62,7 @@ const Home: NextPage = () => {
     },
     {
       id: 4,
+      eventId: "SZV4VPEB",
       title: "Tailwind Playground via NativeWind",
       description: "Play with Tailwind styles in Expo Snack using NativeWind. Do not install the peer dependency when prompted at the bottom of the screen.",
       twitterUrl: "https://twitter.com/mark__lawlor",
