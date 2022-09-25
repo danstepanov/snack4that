@@ -87,7 +87,10 @@ const Home: NextPage = () => {
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
         <Title>{`There's a Snack for That`}</Title>
         <div className="flex flex-col flex-wrap mt-4">
-          <Hyperlink xl baseText="Create your own" urlText="Snack" url="https://snack.expo.dev" />
+          <p className="text-black dark:text-white mb-2">
+            {`Expo Snack is an open-source platform for running React Native apps in the browser. It dynamically bundles and compiles code and runs it in the Expo Client or in a web-player. Code can be saved as "Snacks" and easily shared with others.`}
+          </p>
+          <Hyperlink xl baseText="Try creating your own" urlText="Snack" url="https://snack.expo.dev" />
         </div>
         <div className="flex flex-col w-full">
           <SectionTitle>Snack of the Day</SectionTitle>
