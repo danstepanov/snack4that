@@ -68,6 +68,15 @@ const Home: NextPage = () => {
       twitterUrl: "https://twitter.com/mark__lawlor",
       author: "Mark Lawlor",
       snackUrl: "https://snack.expo.dev/@mwlawlor/nativewind"
+    },
+    {
+      id: 5,
+      eventId: "P7UYITDF",
+      title: "Animated Price Ticker",
+      description: "A beautiful price ticker component made with react-native-reanimated. This is just a taste of the beauty of the BeatGig mobile app.",
+      twitterUrl: "https://mobile.twitter.com/FernandoTheRojo",
+      author: "Fernando Rojo",
+      snackUrl: "https://snack.expo.dev/@beatgig/reanimated-price-ticker "
     }
   ])
   const sortedSnacks = snacks.sort((a, b) => b.id - a.id)
@@ -82,7 +91,7 @@ const Home: NextPage = () => {
         </div>
         <div className="flex flex-col w-full">
           <SectionTitle>Snack of the Day</SectionTitle>
-          <SnackCard key={sortedSnacks[0].id} snack={snacks[0]} />
+          <SnackCard key={sortedSnacks[0].id} snack={sortedSnacks[0]} />
         </div>
         <div className="flex justify-between w-full">
           <SectionTitle>All Snacks</SectionTitle>

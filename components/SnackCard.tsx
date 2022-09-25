@@ -9,7 +9,7 @@ const SnackCard = ({ snack }: { snack: SnackCard }) => {
                 <h2 className="font-bold text-gray-900 dark:text-gray-100 md:group-hover:text-blue-500">{`${snack.title} `}&rarr;</h2>
                 <p className="text-sm text-gray-700 dark:text-gray-300 md:group-hover:text-blue-500 w-4/5 mt-2 mb-4">{snack.description}</p>
             </a>
-            <Hyperlink baseText="Created by" urlText={snack.author} url={snack.snackUrl} />
+            <Hyperlink baseText="Created by" urlText={snack.author} url={snack.twitterUrl} />
         </div>
     )
 }
