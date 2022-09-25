@@ -74,9 +74,18 @@ const Home: NextPage = () => {
       eventId: "P7UYITDF",
       title: "Animated Price Ticker",
       description: "A beautiful price ticker component made with react-native-reanimated. This is just a taste of the beauty of the BeatGig mobile app.",
-      twitterUrl: "https://mobile.twitter.com/FernandoTheRojo",
+      twitterUrl: "https://twitter.com/FernandoTheRojo",
       author: "Fernando Rojo",
-      snackUrl: "https://snack.expo.dev/@beatgig/reanimated-price-ticker "
+      snackUrl: "https://snack.expo.dev/@beatgig/reanimated-price-ticker"
+    },
+    {
+      id: 6,
+      eventId: "AAK4EX9G",
+      title: "Text Input above Keyboard",
+      description: "This snack uses a hook to present an input above the keyboard. My only suggestion is to have the keyboard open upon clicking the button.",
+      twitterUrl: "https://twitter.com/nishanbende",
+      author: "Nishan Bende",
+      snackUrl: "https://snack.expo.dev/@nishanbende/keyboard-avoid-hook"
     }
   ])
   const sortedSnacks = snacks.sort((a, b) => b.id - a.id)
