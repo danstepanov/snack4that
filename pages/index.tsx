@@ -86,6 +86,15 @@ const Home: NextPage = () => {
       twitterUrl: "https://twitter.com/nishanbende",
       author: "Nishan Bende",
       snackUrl: "https://snack.expo.dev/@nishanbende/keyboard-avoid-hook"
+    },
+    {
+      id: 7,
+      eventId: "CODPGHIZ",
+      title: "Skia FlashList",
+      description: "A demo of the incredibly powerful and quick FlashList, made by Shopify. This snack comes to us from one of the smartest and kindest engineers I've ever worked with.",
+      twitterUrl: "https://twitter.com/cedricvanputten",
+      author: "Cedric Van Putten",
+      snackUrl: "https://snack.expo.dev/@bycedric/skia-flash-list"
     }
   ])
   const sortedSnacks = snacks.sort((a, b) => b.id - a.id)
