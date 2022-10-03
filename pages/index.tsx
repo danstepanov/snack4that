@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import type { NextPage } from "next"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCirclePlus } from '@fortawesome/free-solid-svg-icons'
+import * as Fathom from 'fathom-client'
 
 import Hyperlink from '../components/Hyperlink'
 import SnackCard from '../components/SnackCard'
@@ -58,6 +59,11 @@ const Home: NextPage = () => {
     }
   }
 
+  function showModalClicked() {
+    Fathom.trackGoal('DA0IY3BB', 0)
+    toggleModal()
+  }
+
   return (
     <Container>
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
@@ -76,7 +82,7 @@ const Home: NextPage = () => {
         </div>
         <div className="flex justify-between w-full">
           <SectionTitle>All Snacks</SectionTitle>
-          <button onClick={toggleModal}>
+          <button onClick={showModalClicked}>
             <FontAwesomeIcon icon={faCirclePlus} size="2x" className="flex self-center px-2 pt-2 text-black dark:text-white text-center font-bold" />
           </button>
         </div>
