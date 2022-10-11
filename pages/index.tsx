@@ -8,6 +8,7 @@ import Hyperlink from '../components/Hyperlink'
 import SnackCard from '../components/SnackCard'
 import Container from "../components/Container"
 import SectionTitle from "../components/SectionTitle"
+import SectionSubtitle from "../components/SectionSubtitle"
 import Title from "../components/Title"
 import Modal from "../components/Modal"
 import useModal from "../hooks/useModal"
@@ -22,6 +23,7 @@ declare global {
     twitterUrl: string;
     author: string;
     snackUrl: string;
+    type: string;
   }
 }
 const Home: NextPage = () => {  
@@ -29,6 +31,11 @@ const Home: NextPage = () => {
   const [isLoading, setLoading] = useState(true)
   const [snacks, setSnacks] = useState<SnackCard[]>([])
   const sortedSnacks = snacks.sort((a, b) => b.id - a.id)
+  const expoSnacks = snacks.filter(snack => snack.type === 'expo')
+  const visualSnacks = snacks.filter(snack => snack.type === 'visual')
+  const componentSnacks = snacks.filter(snack => snack.type === 'component')
+  const templateSnacks = snacks.filter(snack => snack.type === 'template')
+  const performanceSnacks = snacks.filter(snack => snack.type === 'performance')
 
   useEffect(() => {
     getSnacks()
@@ -39,7 +46,7 @@ const Home: NextPage = () => {
       setLoading(true)
       const { data, error, status } = await supabase
         .from('snacks')
-        .select(`id, eventId, title, description, twitterUrl, author, snackUrl`)
+        .select(`id, eventId, title, description, twitterUrl, author, snackUrl, type`)
       
       if (error && status !== 406) {
         throw error
@@ -87,11 +94,42 @@ const Home: NextPage = () => {
           </button>
         </div>
         {isLoading ? null : (
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-            {sortedSnacks.map((snack: SnackCard) => (
-              <SnackCard key={snack.id} snack={snack} />
-            ))}
-          </div>
+          <>
+            <SectionSubtitle>Templates & Playgrounds</SectionSubtitle>
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+              {templateSnacks.map((snack: SnackCard) => (
+                <SnackCard key={snack.id} snack={snack} />
+              ))}
+            </div>
+            
+            <SectionSubtitle>Expo Tools</SectionSubtitle>
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+              {expoSnacks.map((snack: SnackCard) => (
+                <SnackCard key={snack.id} snack={snack} />
+              ))}
+            </div>
+
+            <SectionSubtitle>Performance</SectionSubtitle>
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+              {performanceSnacks.map((snack: SnackCard) => (
+                <SnackCard key={snack.id} snack={snack} />
+              ))}
+            </div>
+
+            <SectionSubtitle>Design</SectionSubtitle>
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+              {visualSnacks.map((snack: SnackCard) => (
+                <SnackCard key={snack.id} snack={snack} />
+              ))}
+            </div>
+
+            <SectionSubtitle>One-off Components</SectionSubtitle>
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+              {componentSnacks.map((snack: SnackCard) => (
+                <SnackCard key={snack.id} snack={snack} />
+              ))}
+            </div>
+          </>
         )}
         {showModal ? <Modal toggleModal={toggleModal} /> : null}
       </div>
