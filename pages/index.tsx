@@ -76,10 +76,11 @@ const Home: NextPage = () => {
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
         <Title>{`There's a Snack for That`}</Title>
         <div className="flex flex-col flex-wrap mt-4">
+          <p className="text-lg font-bold text-black dark:text-white mb-2">What is Expo Snack?</p>
           <p className="text-black dark:text-white mb-2">
             {`Expo Snack is an open-source platform for running React Native apps in the browser. It dynamically bundles and compiles code and runs it in the Expo Client or in a web-player. Code can be saved as "Snacks" and easily shared with others.`}
           </p>
-          <Hyperlink xl baseText="Try creating your own" urlText="Snack" url="https://snack.expo.dev" />
+          <Hyperlink baseText="Try creating your own" urlText="Snack" url="https://snack.expo.dev" />
         </div>
         <div className="flex flex-col w-full">
           <SectionTitle>Snack of the Day</SectionTitle>
@@ -95,35 +96,35 @@ const Home: NextPage = () => {
         </div>
         {isLoading ? null : (
           <>
-            <SectionSubtitle>Templates & Playgrounds</SectionSubtitle>
+            <SectionSubtitle>🛝 Templates & Playgrounds</SectionSubtitle>
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               {templateSnacks.map((snack: SnackCard) => (
                 <SnackCard key={snack.id} snack={snack} />
               ))}
             </div>
             
-            <SectionSubtitle>Expo Tools</SectionSubtitle>
+            <SectionSubtitle>🧰 Expo Tools</SectionSubtitle>
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               {expoSnacks.map((snack: SnackCard) => (
                 <SnackCard key={snack.id} snack={snack} />
               ))}
             </div>
 
-            <SectionSubtitle>Performance</SectionSubtitle>
+            <SectionSubtitle>⚡ Performance</SectionSubtitle>
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               {performanceSnacks.map((snack: SnackCard) => (
                 <SnackCard key={snack.id} snack={snack} />
               ))}
             </div>
 
-            <SectionSubtitle>Design</SectionSubtitle>
+            <SectionSubtitle>✨ Design</SectionSubtitle>
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               {visualSnacks.map((snack: SnackCard) => (
                 <SnackCard key={snack.id} snack={snack} />
               ))}
             </div>
 
-            <SectionSubtitle>One-off Components</SectionSubtitle>
+            <SectionSubtitle>📱 One-off Components</SectionSubtitle>
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               {componentSnacks.map((snack: SnackCard) => (
                 <SnackCard key={snack.id} snack={snack} />
