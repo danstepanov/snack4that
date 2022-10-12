@@ -6,13 +6,13 @@ import Hyperlink from './Hyperlink'
 
 export default function Container({ children } : {children: ReactElement }) {
     const [mounted, setMounted] = useState(false)
-    const { theme, setTheme } = useTheme()
+    const { theme, setTheme, resolvedTheme } = useTheme()
     useEffect(() => setMounted(true), [])
   
     return (
       <div className="bg-white dark:bg-black flex flex-col h-screen">  
         <nav className="sticky-nav flex justify-between items-center max-w-4xl w-full p-8 my-0 md:my-8 mx-auto bg-opacity-60">
-            <button aria-label="Toggle Dark Mode" type="button" className="bg-gray-200 dark:bg-gray-800 rounded p-3 h-10 w-10" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
+            <button aria-label="Toggle Dark Mode" type="button" className="bg-gray-200 dark:bg-gray-800 rounded p-3 h-10 w-10" onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}>
                 {mounted && (
                     <svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" className="h-4 w-4 text-gray-800 dark:text-gray-200">
                         {theme === 'dark' ? (
