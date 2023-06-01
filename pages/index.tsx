@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react"
 import type { NextPage } from "next"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCirclePlus } from '@fortawesome/free-solid-svg-icons'
-import * as Fathom from 'fathom-client'
 
 import Hyperlink from '../components/Hyperlink'
 import SnackCard from '../components/SnackCard'
@@ -67,7 +66,6 @@ const Home: NextPage = () => {
   }
 
   function showModalClicked() {
-    Fathom.trackGoal('DA0IY3BB', 0)
     toggleModal()
   }
 

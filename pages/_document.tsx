@@ -25,7 +25,6 @@ class MyDocument extends Document {
                     <meta property="og:description" content="A collection of helpful Expo Snacks" key="ogdescription" />
                     <meta name="twitter:card" content="summary" key="twcard" />
                     <meta name="twitter:creator" content="@danstepanov" key="twhandle" />
-                    <script src="https://app.embed.im/snow.js" defer></script>
                 </Head>
                 <body className="bg-white dark:bg-black text-white dark:text-black">
                     <Main />

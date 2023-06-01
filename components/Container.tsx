@@ -1,6 +1,5 @@
 import { useEffect, useState, ReactElement } from 'react'
 import { useTheme } from 'next-themes'
-import * as Fathom from 'fathom-client'
 
 import Hyperlink from './Hyperlink'
 
@@ -29,7 +28,7 @@ export default function Container({ children } : {children: ReactElement }) {
                 {children}
             </main>
 
-            <footer className="flex justify-center mb-8" onClick={() => Fathom.trackGoal('ZYHRMFCH', 0)}>
+            <footer className="flex justify-center mb-8">
                 <Hyperlink baseText="Maintained by" urlText="Dan Stepanov" url="https://danstepanov.com" />
             </footer>
         </div>

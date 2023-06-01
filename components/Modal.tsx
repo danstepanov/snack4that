@@ -1,7 +1,4 @@
-import * as Fathom from 'fathom-client'
-
 const Modal = ({ toggleModal }: { toggleModal: () => void }) => {
-    Fathom.trackGoal('0O5M5WHL', 0)
     const navigateToTwitter = () => {
         location.href = "https://twitter.com/danstepanov"
         toggleModal()
