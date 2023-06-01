@@ -35,6 +35,7 @@ const Home: NextPage = () => {
   const componentSnacks = snacks.filter(snack => snack.type === 'component')
   const templateSnacks = snacks.filter(snack => snack.type === 'template')
   const performanceSnacks = snacks.filter(snack => snack.type === 'performance')
+  const cursedSnacks = snacks.filter(snack => snack.type === 'cursed')  
 
   useEffect(() => {
     getSnacks()
@@ -125,6 +126,13 @@ const Home: NextPage = () => {
             <SectionSubtitle>📱 One-off Components</SectionSubtitle>
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               {componentSnacks.map((snack: SnackCard) => (
+                <SnackCard key={snack.id} snack={snack} />
+              ))}
+            </div>
+
+            <SectionSubtitle>💀 Cursed Components</SectionSubtitle>
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+              {cursedSnacks.map((snack: SnackCard) => (
                 <SnackCard key={snack.id} snack={snack} />
               ))}
             </div>
