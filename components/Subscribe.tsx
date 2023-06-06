@@ -49,7 +49,7 @@ function Subscribe() {
                     </div>
                 </div>
                 <div className="mt-4">
-                    {message ? message : <p className="text-black dark:text-white mb-2">{`You only get emails when there's new content available, no spam.`}</p>}
+                    {message ? <p className="text-black dark:text-white mb-2">message</p> : <p className="text-black dark:text-white mb-2">{`You only get emails when there's new content available, no spam.`}</p>}
                 </div>
                 <button type="submit" className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 dark:animate-move-bg dark:bg-gradient-to-r dark:from-indigo-500 dark:via-pink-500 dark:to-indigo-500 dark:bg-400% dark:text-white dark:ring-0">{'✨ Subscribe 💌'}</button>
             </form>
